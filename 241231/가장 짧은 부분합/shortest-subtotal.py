@@ -7,6 +7,10 @@ for l in range(n):
     while r + 1 <= n and tot + nums[r] <= k:
         tot += nums[r]
         r += 1
-    answer = min(answer, r - l + 1)
+    if tot >= k:
+        answer = min(answer, r - l + 1)
     tot -= nums[l]
-print(answer)
+if answer == 100000:
+    print(-1)
+else:
+    print(answer)
