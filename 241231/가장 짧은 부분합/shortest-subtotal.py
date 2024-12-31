@@ -4,8 +4,8 @@ tot = nums[0]
 answer = 100000
 r = 0
 for l in range(n):
-    while r + 1 <= n and tot + nums[r] <= k:
-        tot += nums[r]
+    while r + 1 < n and tot < k:
+        tot += nums[r+1]
         r += 1
     if tot >= k:
         answer = min(answer, r - l + 1)
