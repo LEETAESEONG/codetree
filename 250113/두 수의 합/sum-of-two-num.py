@@ -15,7 +15,10 @@ for num in keysArr:
     a = dictArr.get(num, 0)
     b = dictArr.get(k-num, 0)
     if a and b:
-        answer += a * b
+        if num == k-num:
+            answer += (a * (a-1)) // 2
+        else:
+            answer += a * b
         dictArr[num] = 0
         dictArr[k-num] = 0
 print(answer)
