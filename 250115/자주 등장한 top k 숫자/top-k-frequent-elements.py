@@ -7,9 +7,9 @@ dictArr = dict()
 for num in arr:
     if dictArr.get(num, 0):
         dictArr[num] += 1
-        if dictArr[num] >= k:
-            stack.append(num)
     else:
         dictArr[num] = 1
-setStack = sorted(list(set(stack)), reverse=True)
-print(*setStack)
+itemsArr = sorted(list(dictArr.items()), key=lambda x:(x[1], x[0]), reverse=True)
+for i in range(k):
+    iak, iav = itemsArr[i]
+    print(iak, end=" ")
