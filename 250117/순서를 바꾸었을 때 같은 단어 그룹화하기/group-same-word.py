@@ -1,5 +1,8 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
-words = [input() for _ in range(n)]
+words = [input().strip() for _ in range(n)]
 
 # Write your code here!
 asciiDict = dict()
